@@ -5,7 +5,7 @@ require 'test_helper'
 class HereTest < GeocoderTestCase
 
   def setup
-    Geocoder.configure(lookup: :here)
+    Geocoder.configure(lookup: :here, language: "english")
     set_api_key!(:here)
   end
 
