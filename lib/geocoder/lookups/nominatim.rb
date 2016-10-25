@@ -39,7 +39,7 @@ module Geocoder::Lookup
         :addressdetails => "1",
         :"accept-language" => (query.language || configuration.language)
       }.merge(super)
-      params.merge!(query.options[:nominatim])
+      params.merge!(query.options[:nominatim]) if query.options[:nominatim] != nil
       if query.reverse_geocode?
         lat,lon = query.coordinates
         params[:lat] = lat
